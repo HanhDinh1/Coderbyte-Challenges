@@ -6,3 +6,17 @@ For Example: if str is "af5c a#!" then your program should return 1653 1#!.
 Examples: Input: "hello 45" => Output: 85121215 45 // Input: "jaj-a" => Output: 10110-1
 
 SOLUTION:
+function StringChallenge(str) {
+  var re = /[a-z]/i;
+  var newStr=[];
+  for (let i=0; i<str.length; i++){
+    if(str[i].match(re)){
+      newStr.push(str.charCodeAt(i)-96);
+    }
+    else{
+      newStr.push(str[i]);
+    }
+  }
+  return newStr.join("");
+}
+console.log(StringChallenge(readline()));
